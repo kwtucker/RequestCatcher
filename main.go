@@ -31,7 +31,11 @@ func Index(w http.ResponseWriter, r *http.Request, p httprouter.Params) {
 		return
 	}
 
-	fmt.Println(string(body))
+	// if err := json.NewDecoder(r.Body).Decode(&b); err != nil {
+	// 	fmt.Println(err)
+	// }
+
+	fmt.Println(body)
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
